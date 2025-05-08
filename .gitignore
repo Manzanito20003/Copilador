@@ -1,0 +1,32 @@
+# Archivos de compilación
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Directorios de build
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# Archivos de CMake generados
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# Archivos de logs y temporales
+*.log
+*.tmp
+
+# Archivos de CLion y JetBrains
+.idea/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
