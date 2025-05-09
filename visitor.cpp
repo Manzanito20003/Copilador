@@ -4,6 +4,7 @@
 #include <unordered_map>
 using namespace std;
 unordered_map<std::string, int> memoria;
+unordered_map<std::string, string> memoria_str;
 ///////////////////////////////////////////////////////////////////////////////////
 int BinaryExp::accept(Visitor* visitor) {
     return visitor->visit(this);
@@ -210,11 +211,11 @@ void PrintVisitor::visit(ForStatement *stm) {
 
 }
 
-int PrintVisitor::visit(StringLiteral *exp) {
+string PrintVisitor::visit(StringLiteral *exp) {
     cout<<'"';
     cout << exp->value;
     cout<<'"';
-    return 0;
+    return "";
 }
 
 std::string PrintVisitor::visit(IndexExpr *exp) {
@@ -248,8 +249,8 @@ void EVALVisitor::visit(ForStatement *stm) {
 
 }
 
-int EVALVisitor::visit(StringLiteral *exp) {
-    return 0;
+string EVALVisitor::visit(StringLiteral *exp) {
+    return exp->value;
 }
 
 std::string EVALVisitor::visit(IndexExpr *exp) {

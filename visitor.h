@@ -19,7 +19,7 @@ class IndexExpr;
 class Visitor {
 public:
     virtual int visit(BinaryExp* exp) = 0;
-    virtual int visit(StringLiteral* exp) = 0;
+    virtual std::string visit(StringLiteral* exp) = 0;
     virtual std::string visit(IndexExpr* exp) = 0;
     virtual int visit(NumberExp* exp) = 0;
     virtual int visit(IdentifierExp* exp) = 0;
@@ -36,7 +36,7 @@ public:
     void imprimir(Program* program);
     int visit(BinaryExp* exp) override;
     int visit(NumberExp* exp) override;
-    int visit(StringLiteral* exp) override;
+    std::string visit(StringLiteral* exp) override;
     std::string visit(IndexExpr* exp) override;
     int visit(IdentifierExp* exp) override;
     void visit(AssignStatement* stm) override;
@@ -52,7 +52,7 @@ public:
     void ejecutar(Program* program);
     int visit(BinaryExp* exp) override;
     int visit(NumberExp* exp) override;
-    int visit(StringLiteral* exp) override;
+    std::string visit(StringLiteral* exp) override;
     std::string visit(IndexExpr* exp) override;
     int visit(IdentifierExp* exp) override;
     void visit(AssignStatement* stm) override;

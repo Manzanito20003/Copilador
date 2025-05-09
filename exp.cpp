@@ -95,7 +95,7 @@ IndexExpr::IndexExpr(const string &id_, Exp *index_) {
 }
 
 int IndexExpr::accept(Visitor *visitor) {
-    visitor->visit(reinterpret_cast<AssignStatement *>(this));
+    visitor->visit(this);
     return 0;
 }
 
